@@ -138,7 +138,11 @@ function connectIRC(config: TwitchlintSettings) {
     }
 
     const filepath = parts[1];
-    const matches = documents.keys().filter(uri => uri.indexOf(filepath) != -1);
+    const matches = documents
+      .keys()
+      .filter(
+        uri => uri.indexOf("file://") === 0 && uri.indexOf(filepath) != -1
+      );
     if (matches.length > 1) {
       client.say(
         to,
