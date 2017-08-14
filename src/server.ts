@@ -81,10 +81,13 @@ connection.onInitialize((params): InitializeResult => {
   };
 });
 
-setInterval(
-  () => console.log(documents.all().map(d => [d.uri, d.lineCount])),
-  3000
-);
+documents.onDidChangeContent(e => {
+  if (suggestions[e.document.uri] == null) return;
+  suggestions[e.document.uri] = suggestions[e.document.uri].filter(
+    suggestion => suggestion.range.start.line < e.document.lineCount
+  );
+  sendSuggestions(e.document.uri);
+});
 
 connection.listen();
 
