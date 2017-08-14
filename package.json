@@ -1,8 +1,8 @@
 {
   "name": "twitchlint",
   "displayName": "twitchlint",
-  "description": "Show live suggestions from your stream's chat right in Code.",
-  "version": "0.0.1",
+  "description": "Let your Twitch chat lint your code.",
+  "version": "0.0.2",
   "publisher": "irth",
   "repository": {
     "type": "git",
