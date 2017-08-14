@@ -4,6 +4,10 @@
   "description": "Show live suggestions from your stream's chat right in Code.",
   "version": "0.0.1",
   "publisher": "irth",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/irth/twitchlint"
+  },
   "engines": {
     "vscode": "^1.15.0"
   },
