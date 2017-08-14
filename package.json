@@ -16,7 +16,10 @@
         "command": "twitchlint.start",
         "title": "Twitchlint: Start"
       },
-      { "command": "twitchlint.stop", "title": "Twitchlint: Stop" },
+      {
+        "command": "twitchlint.stop",
+        "title": "Twitchlint: Stop"
+      },
       {
         "command": "twitchlint.removeSuggestionsAtLine",
         "title": "Twitchlint: Remove suggestions from the current line"
@@ -29,7 +32,48 @@
         "command": "twitchlint.clearAllSuggestions",
         "title": "Twitchlint: Clear all suggestions across all files"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Example configuration",
+      "properties": {
+        "twitchlint.connect": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to connect to IRC."
+        },
+        "twitchlint.server": {
+          "type": "string",
+          "default": "irc.chat.twitch.tv",
+          "description": "The IRC server to connect to."
+        },
+        "twitchlint.port": {
+          "type": "number",
+          "default": 6667,
+          "description": "The IRC server port."
+        },
+        "twitchlint.password": {
+          "type": "string",
+          "default": "",
+          "description": "IRC server password. Leave empty if not needed. For Twitch generate a token here: http://www.twitchapps.com/tmi"
+        },
+        "twitchlint.nickname": {
+          "type": "string",
+          "default": "TwitchUsername",
+          "description": "IRC nickname. For Twitch, use your username."
+        },
+        "twitchlint.channel": {
+          "type": "string",
+          "default": "#channel",
+          "description": "The channel name. For Twitch, use #${your channel/user name}."
+        },
+        "twitchlint.command": {
+          "type": "string",
+          "default": ":lint",
+          "description": "The command for your viewers to use."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
@@ -39,12 +83,14 @@
   },
   "devDependencies": {
     "@types/mocha": "^2.2.32",
-    "@types/node": "^6.0.40",
+    "@types/node": "^6.0.85",
     "mocha": "^2.3.3",
     "typescript": "^2.0.3",
     "vscode": "^1.0.0"
   },
   "dependencies": {
+    "@types/node": "^6.0.85",
+    "irc": "^0.5.2",
     "vscode-languageclient": "^3.3.0",
     "vscode-languageserver": "^3.3.0"
   }
