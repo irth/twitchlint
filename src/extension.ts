@@ -63,6 +63,27 @@ export function activate(context: vscode.ExtensionContext) {
     vscode.window.showInformationMessage("Twitchlint: Stopping...");
     languageClient.stop();
   });
+
+  registerCommand(context, "twitchlint.removeSuggestionsAtLine", () => {
+    const activeEditor = vscode.window.activeTextEditor;
+    const params = {
+      uri: activeEditor.document.uri.toString(),
+      line: activeEditor.selection.start.line
+    };
+    languageClient.sendNotification("removeSuggestionsAtLine", params);
+  });
+
+  registerCommand(context, "twitchlint.removeSuggestionsFromFile", () => {
+    const activeEditor = vscode.window.activeTextEditor;
+    const params = {
+      uri: activeEditor.document.uri.toString()
+    };
+    languageClient.sendNotification("removeSuggestionsFromFile", params);
+  });
+
+  registerCommand(context, "twitchlint.clearAllSuggestions", () => {
+    languageClient.sendNotification("clearAllSuggestions");
+  });
 }
 
 export function deactivate() {}

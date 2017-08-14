@@ -16,7 +16,19 @@
         "command": "twitchlint.start",
         "title": "Twitchlint: Start"
       },
-      { "command": "twitchlint.stop", "title": "Twitchlint: Stop" }
+      { "command": "twitchlint.stop", "title": "Twitchlint: Stop" },
+      {
+        "command": "twitchlint.removeSuggestionsAtLine",
+        "title": "Twitchlint: Remove suggestions from the current line"
+      },
+      {
+        "command": "twitchlint.removeSuggestionsFromFile",
+        "title": "Twitchlint: Remove all suggestions from the current file"
+      },
+      {
+        "command": "twitchlint.clearAllSuggestions",
+        "title": "Twitchlint: Clear all suggestions across all files"
+      }
     ]
   },
   "scripts": {
