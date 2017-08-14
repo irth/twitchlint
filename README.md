@@ -1,65 +1,33 @@
-# twitchlint README
+# Twitchlint
 
-This is the README for your extension "twitchlint". After writing up a brief description, we recommend including the following sections.
+Twitchlint is an extension for Visual Studio Code that allows your Twitch viewers sent you suggestions for your code via the chat.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension connects to the Twitch chat (or any IRC server) and allows your viewers to issue commands to display suggestions right in your editor.
 
-For example if there is an image subfolder under your extension project workspace:
+![twitchlint](twitchlint.gif)
 
-\!\[feature X\]\(images/feature-x.png\)
+The syntax is as follows:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```:lint <filename> <line_number> <...suggestion>```
+
+You can change the command in the settings, too.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+If you want to use Twitch chat, you'll need an API token, e.g. from [here](http://www.twitchapps.com/tmi/).
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+See the *Contributions* tab.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* Suggestions stay in place when adding/removing lines, instead of moving with the text.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release of Twitchlint
